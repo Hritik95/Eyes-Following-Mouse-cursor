@@ -13,6 +13,7 @@ body{
     align-items: center;
     min-height: 100vh;
     background: #edf8ff;
+    flex-wrap: wrap;
 }
 
 .box{
@@ -36,6 +37,10 @@ body{
     border-top-right-radius: 150px;
     z-index: 9;
     overflow: hidden;
+}
+
+.box:nth-child(2) .bottom{
+    background: #a22ed4;
 }
 
 .box .bottom::before{
@@ -121,3 +126,113 @@ body{
     background: linear-gradient(rgba(0,0,0,0.1),transparent);
 }
 
+.box .head .face{
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 160px;
+    height: 180px;
+    background: #ffcfcc;
+    z-index: 12;
+    border-radius: 50%;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    z-index: 12;
+}
+
+.box .head .face .eyes{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+}
+
+.box .head .face .eyes .eye{
+    position: relative;
+    width: 45px;
+    height: 45px;
+}
+
+.box .head .face .eyes .eye::before{
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 -3px 0 #111;
+}
+
+.box .head .face .eyes .eye i{
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+}
+.box .head .face .eyes .eye i::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #111;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #3d5d89;
+    transform: translate(-10px,2px);
+}
+
+.box .head .face .mouth{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 60px;
+    height: 30px;
+    background: #ff4e57;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: inset 0 10px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.box .head .face:hover .mouth{
+    height: 15px;
+    width: 70px;
+    bottom: 40px;
+    border-radius: 10px;
+}
+
+.face:hover{
+    cursor: pointer;
+}
+
+.box .hair{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 230px;
+    height: 450px;
+    background: #111;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+}
+
+.box:nth-child(2) .hair{
+    bottom: 200px;
+    height: 250px;
+    border-radius: 50%;
+}
